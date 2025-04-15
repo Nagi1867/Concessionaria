@@ -22,7 +22,7 @@ public class Concessionaria implements Serializable {
         this.id = id;
         this.modelo = modelo;
         this.placa = placa;
-        this.status = status;
+        setStatus(status);
     }
 
     public Long getId() {
