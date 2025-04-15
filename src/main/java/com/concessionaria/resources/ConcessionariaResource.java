@@ -1,8 +1,7 @@
 package com.concessionaria.resources;
 
-import com.concessionaria.entities.Concessionaria;
+import com.concessionaria.domain.entities.Concessionaria;
 import com.concessionaria.services.ConcessionariaService;
-import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

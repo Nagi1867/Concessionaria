@@ -1,4 +1,4 @@
-package com.concessionaria.entities;
+package com.concessionaria.domain.entities;
 
 import com.concessionaria.enums.Status;
 import jakarta.persistence.*;

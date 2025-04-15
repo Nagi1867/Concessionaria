@@ -1,6 +1,6 @@
 package com.concessionaria.config;
 
-import com.concessionaria.entities.Concessionaria;
+import com.concessionaria.domain.entities.Concessionaria;
 import com.concessionaria.enums.Status;
 import com.concessionaria.repositories.ConcessionariaRepository;
 import org.springframework.beans.factory.annotation.Autowired;

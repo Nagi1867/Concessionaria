@@ -1,6 +1,6 @@
 package com.concessionaria.services;
 
-import com.concessionaria.entities.Concessionaria;
+import com.concessionaria.domain.entities.Concessionaria;
 import com.concessionaria.repositories.ConcessionariaRepository;
 import com.concessionaria.services.exceptions.DatabaseException;
 import com.concessionaria.services.exceptions.ResourceNotFoundException;
