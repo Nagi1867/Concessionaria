@@ -1,8 +1,10 @@
 package com.concessionaria.resources.controllers;
 
 import com.concessionaria.domain.user.AuthenticationDTO;
+import com.concessionaria.domain.user.LoginResponseDTO;
 import com.concessionaria.domain.user.RegisterDTO;
 import com.concessionaria.domain.user.User;
+import com.concessionaria.infra.security.TokenService;
 import com.concessionaria.repositories.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +25,17 @@ public class AuthenticationController {
     private AuthenticationManager authenticationManager;
     @Autowired
     private UserRepository repository;
+    @Autowired
+    private TokenService tokenService;
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data) {
             var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
             var auth = this.authenticationManager.authenticate(usernamePassword);
 
-            return ResponseEntity.ok().build();
+            var token = tokenService.generateToken((User) auth.getPrincipal());
+
+            return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")
