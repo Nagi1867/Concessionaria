@@ -1,4 +1,4 @@
-package com.concessionaria.services;
+package com.concessionaria.services.security;
 
 import com.concessionaria.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
